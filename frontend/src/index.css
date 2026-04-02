@@ -1,0 +1,95 @@
+:root {
+  --primary: #000000;
+  --accent: #D4AF37;
+  /* Gold */
+  --bg-dark: #121212;
+  --bg-light: #FFFFFF;
+  --text-dark: #1A1A1A;
+  --text-light: #F9F9F9;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --border-radius: 8px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: #FDFBF8;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #B08A5A;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent), #B8860B);
+  color: white;
+}
+
+.btn-accent:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Badge Styles */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.badge-sold-out {
+  background-color: #FF4D4D;
+  color: white;
+}
+
+.badge-best-seller {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* Arabic RTL Support */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
