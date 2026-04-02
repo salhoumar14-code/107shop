@@ -67,7 +67,11 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
+<<<<<<< HEAD
             Exclusivité, Élégance et Qualité
+=======
+            {t('tagline')}
+>>>>>>> b4c4be1 (v1)
           </motion.p>
           <motion.a
             href="#products"
@@ -104,7 +108,11 @@ const Home = () => {
           <div className="price-inputs">
             <input 
               type="number" 
+<<<<<<< HEAD
               placeholder={i18n.language === 'ar' ? 'السعر الأدنى' : 'Prix min'}
+=======
+              placeholder={t('price_min')}
+>>>>>>> b4c4be1 (v1)
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
               className="price-input"
@@ -112,7 +120,11 @@ const Home = () => {
             <span className="price-separator">-</span>
             <input 
               type="number" 
+<<<<<<< HEAD
               placeholder={i18n.language === 'ar' ? 'السعر الأقصى' : 'Prix max'}
+=======
+              placeholder={t('price_max')}
+>>>>>>> b4c4be1 (v1)
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
               className="price-input"
@@ -121,7 +133,11 @@ const Home = () => {
         </div>
 
         {loading ? (
+<<<<<<< HEAD
           <div className="loading-state">Chargement...</div>
+=======
+          <div className="loading-state">{t('loading')}</div>
+>>>>>>> b4c4be1 (v1)
         ) : (
           <motion.div
             className="product-grid"
@@ -145,7 +161,11 @@ const Home = () => {
         )}
 
         {!loading && filteredProducts.length === 0 && (
+<<<<<<< HEAD
           <div className="empty-state">Aucun produit trouvé dans cette catégorie.</div>
+=======
+          <div className="empty-state">{t('no_products')}</div>
+>>>>>>> b4c4be1 (v1)
         )}
       </section>
 

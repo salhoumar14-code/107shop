@@ -5,7 +5,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
     fr: {
         translation: {
-            "welcome": "Bienvenue chez Rimy",
+            "welcome": "Bienvenue chez 107 Shop",
+            "tagline": "Mode Masculine & Boubous Mauritaniens",
             "shop_now": "Acheter maintenant",
             "categories": "Catégories",
             "best_sellers": "Meilleures ventes",
@@ -16,11 +17,16 @@ const resources = {
             "all": "Tous",
             "contact_us": "Contactez-nous",
             "latest_events": "Événements récents",
+            "loading": "Chargement...",
+            "no_products": "Aucun produit trouvé dans cette catégorie.",
+            "price_min": "Prix min",
+            "price_max": "Prix max",
         }
     },
     ar: {
         translation: {
-            "welcome": "مرحباً بكم في ريمي",
+            "welcome": "مرحباً بكم في 107 Shop",
+            "tagline": "الأزياء الرجالية والبوبو الموريتاني",
             "shop_now": "تسوق الآن",
             "categories": "الفئات",
             "best_sellers": "الأكثر مبيعاً",
@@ -31,6 +37,10 @@ const resources = {
             "all": "الكل",
             "contact_us": "اتصل بنا",
             "latest_events": "أحدث الفعاليات",
+            "loading": "جاري التحميل...",
+            "no_products": "لا توجد منتجات في هذه الفئة.",
+            "price_min": "السعر الأدنى",
+            "price_max": "السعر الأقصى",
         }
     }
 };

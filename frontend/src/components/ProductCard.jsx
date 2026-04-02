@@ -10,19 +10,19 @@ const ProductCard = ({ product }) => {
   const description = currentLang === 'ar' ? product.description_ar : product.description_fr;
 
   const handleWhatsApp = () => {
-    const textFr = `Bonjour Rimy ✨\n\nJe suis très intéressé(e) par ce produit et j'aimerais passer commande :\n\n🛍️ *Produit* : ${product.name_fr}\n💰 *Prix* : ${product.price} MRU\n\nPouvez-vous s'il vous plaît me confirmer la disponibilité ? Merci !\n\nPhoto: ${product.images[0] || ''}`;
-    const textAr = `مرحباً ريمي ✨\n\nأنا مهتم(ة) جداً بهذا المنتج وأود تقديم طلب:\n\n🛍️ *المنتج* : ${product.name_ar}\n💰 *السعر* : ${product.price} أوقية\n\nهل يمكنكم تأكيد توفر هذا المنتج؟ شكراً لكم!\n\nصورة: ${product.images[0] || ''}`;
+    const textFr = `Bonjour 107 Shop 👔\n\nJe suis intéressé(e) par ce produit et j'aimerais passer commande :\n\n🛍️ *Produit* : ${product.name_fr}\n💰 *Prix* : ${product.price} MRU\n\nMerci de confirmer la disponibilité !\n\nPhoto: ${product.images[0] || ''}`;
+    const textAr = `مرحباً 107 Shop 👔\n\nأنا مهتم(ة) بهذا المنتج وأود تقديم طلب:\n\n🛍️ *المنتج* : ${product.name_ar}\n💰 *السعر* : ${product.price} أوقية\n\nهل يمكنكم تأكيد توفر هذا المنتج؟ شكراً!\n\nصورة: ${product.images[0] || ''}`;
     const text = currentLang === 'ar' ? textAr : textFr;
-    
-    window.open(`https://wa.me/22224230000?text=${encodeURIComponent(text)}`, '_blank');
+
+    window.open(`https://wa.me/22224107107?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
     <div className="product-card">
       <div className="product-image-container">
-        <img src={product.images[0] || 'https://via.placeholder.com/400x500?text=RIMY'} alt={name} className="product-image" />
+        <img src={product.images[0] || 'https://via.placeholder.com/400x500?text=107+Shop'} alt={name} className="product-image" />
         <div className="product-logo-overlay">
-          <img src="/logo.jpg" alt="Rimy" className="product-logo-watermark" />
+          <img src="/logo_107.png" alt="107 Shop" className="product-logo-watermark" />
         </div>
         {product.isSoldOut && <span className="badge badge-sold-out absolute-badge">{t('sold_out')}</span>}
         {product.isBestSeller && <span className="badge badge-best-seller absolute-badge top-right">{t('best_sellers')}</span>}
@@ -63,9 +63,6 @@ const ProductCard = ({ product }) => {
           height: 100%;
           object-fit: cover;
           transition: var(--transition);
-        }
-        .product-card:hover .product-image {
-          transform: scale(1.05);
         }
         .product-card:hover .product-image {
           transform: scale(1.05);

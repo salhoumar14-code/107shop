@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ShoppingBag, Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container nav-content">
         <Link to="/" className="logo">
-          <img src="/logo.jpg" alt="RIMY" className="logo-img" />
+          <img src="/logo_107.png" alt="107 Shop" className="logo-img" />
         </Link>
 
         {/* Desktop Links */}
@@ -117,10 +117,10 @@ const Navbar = () => {
           .logo-img { height: 45px; }
           .desktop-only { display: none; }
           .mobile-only { display: block; }
-          .mobile-toggle { 
-            background: none; 
-            border: none; 
-            cursor: pointer; 
+          .mobile-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
             color: var(--primary);
             padding: 5px;
           }

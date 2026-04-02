@@ -122,11 +122,11 @@ const RamadanSplash = ({ onEnter }) => {
         {/* Greetings in Arabic and French */}
         <div className="greetings text-center max-w-4xl px-4">
           <h2 className="arabic-text gold-gradient">
-            رمضان مبارك مع ريمي
+            رمضان مبارك مع 107 Shop
           </h2>
 
           <h1 className="french-text uppercase">
-            Ramadan Moubarak avec Rimy
+            Ramadan Moubarak avec 107 Shop
           </h1>
 
           <div className="divider mx-auto mt-8"></div>
@@ -135,7 +135,7 @@ const RamadanSplash = ({ onEnter }) => {
 
       <div className="decorative-line top-line"></div>
       <div className="decorative-footer bottom-8 uppercase font-light">
-        Savoir-faire • Élégance • Tradition
+        Mode Masculine • Boubous Mauritaniens • Tradition
       </div>
 
       <style jsx="true">{`
