@@ -11,21 +11,18 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
-  const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const apiUrl = import.meta.env.VITE_API_URL;
-        const [prodRes, catRes, eventRes] = await Promise.all([
+        const [prodRes, catRes] = await Promise.all([
           axios.get(`${apiUrl}/api/products`),
           axios.get(`${apiUrl}/api/categories`),
-          axios.get(`${apiUrl}/api/events`)
         ]);
         setProducts(prodRes.data);
         setCategories(catRes.data);
-        setEvents(eventRes.data);
         setLoading(false);
       } catch (err) {
         console.error('Error fetching data:', err);
@@ -37,11 +34,9 @@ const Home = () => {
 
   const filteredProducts = (Array.isArray(products) ? products : []).filter(p => {
     const matchCategory = selectedCategory === 'all' || p.category?._id === selectedCategory;
-    
     const min = minPrice === '' ? 0 : Number(minPrice);
     const max = maxPrice === '' ? Infinity : Number(maxPrice);
     const matchPrice = p.price >= min && p.price <= max;
-    
     return matchCategory && matchPrice;
   });
 
@@ -67,11 +62,7 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-<<<<<<< HEAD
-            Exclusivité, Élégance et Qualité
-=======
             {t('tagline')}
->>>>>>> b4c4be1 (v1)
           </motion.p>
           <motion.a
             href="#products"
@@ -106,25 +97,17 @@ const Home = () => {
 
         <div className="filter-bar price-filter-bar">
           <div className="price-inputs">
-            <input 
-              type="number" 
-<<<<<<< HEAD
-              placeholder={i18n.language === 'ar' ? 'السعر الأدنى' : 'Prix min'}
-=======
+            <input
+              type="number"
               placeholder={t('price_min')}
->>>>>>> b4c4be1 (v1)
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
               className="price-input"
             />
             <span className="price-separator">-</span>
-            <input 
-              type="number" 
-<<<<<<< HEAD
-              placeholder={i18n.language === 'ar' ? 'السعر الأقصى' : 'Prix max'}
-=======
+            <input
+              type="number"
               placeholder={t('price_max')}
->>>>>>> b4c4be1 (v1)
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
               className="price-input"
@@ -133,16 +116,9 @@ const Home = () => {
         </div>
 
         {loading ? (
-<<<<<<< HEAD
-          <div className="loading-state">Chargement...</div>
-=======
           <div className="loading-state">{t('loading')}</div>
->>>>>>> b4c4be1 (v1)
         ) : (
-          <motion.div
-            className="product-grid"
-            layout
-          >
+          <motion.div className="product-grid" layout>
             <AnimatePresence mode='popLayout'>
               {filteredProducts.map(product => (
                 <motion.div
@@ -161,11 +137,7 @@ const Home = () => {
         )}
 
         {!loading && filteredProducts.length === 0 && (
-<<<<<<< HEAD
-          <div className="empty-state">Aucun produit trouvé dans cette catégorie.</div>
-=======
           <div className="empty-state">{t('no_products')}</div>
->>>>>>> b4c4be1 (v1)
         )}
       </section>
 
@@ -263,9 +235,9 @@ const Home = () => {
           .hero h1 { font-size: 2.2rem; letter-spacing: 2px; }
           .hero p { font-size: 1.2rem; }
           .filter-bar { justify-content: flex-start; padding: 10px 20px; gap: 0.75rem; }
-          .product-grid { 
-            grid-template-columns: repeat(2, 1fr) !important; 
-            gap: 10px !important; 
+          .product-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 10px !important;
           }
           .filter-btn { padding: 8px 15px; font-size: 0.7rem; }
           .price-inputs { padding: 4px 10px; gap: 5px; }
